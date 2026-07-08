@@ -115,7 +115,7 @@ if not df_completo.empty:
             st.plotly_chart(fig_autores, use_container_width=True)
 
         with col_rank2:
-            st.subheader("Quem escreve os maiores 'textões'?")
+            st.subheader("Quem escreve mais textão?")
             media_palavras = df.groupby('Autor')['Qtd_Palavras'].mean().reset_index()
             media_palavras = media_palavras.sort_values(by='Qtd_Palavras', ascending=False)
             fig_textao = px.bar(media_palavras.head(15), x='Qtd_Palavras', y='Autor', orientation='h',
@@ -228,7 +228,7 @@ if not df_completo.empty:
     st.markdown("---")
 
     # --- SEÇÃO 6: PERFIL DE COMPORTAMENTO DOS PARTICIPANTES (TABS) ---
-    st.header("🔬 Análises Comportamentais Avançadas (Os 11 Frente a Frente)")
+    st.header("🔬 Análises Comportamentais")
 
     tab_turnos, tab_vacuo, tab_risadas, tab_rede = st.tabs([
         "🕒 Preferência de Turno",
