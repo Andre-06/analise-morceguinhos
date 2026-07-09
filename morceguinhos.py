@@ -337,6 +337,9 @@ if not df_completo.empty:
             autor_B = df_completo.loc[i + 1, 'Autor']
             tempo_B = df_completo.loc[i + 1, 'Data_Hora']
 
+            if autor_A == "Rafa Cotuca" or autor_B == "Rafa Cotuca":
+                continue
+
             if autor_A != autor_B:
                 diff_segundos = (tempo_B - tempo_A).total_seconds()
                 if 0 <= diff_segundos <= 60:
