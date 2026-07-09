@@ -328,7 +328,7 @@ if not df_completo.empty:
         st.markdown(
             "*Lógica: Contabiliza interações sequenciais onde o participante B manda mensagem até 60 segundos após o participante A.*")
 
-        lista_autores = list(df_completo['Autor'].unique())
+        lista_autores = list(i for i in df_completo['Autor'].unique() if i != "Rafa Cotuca")
         matriz_interacao = pd.DataFrame(0, index=lista_autores, columns=lista_autores)
 
         for i in range(len(df_completo) - 1):
